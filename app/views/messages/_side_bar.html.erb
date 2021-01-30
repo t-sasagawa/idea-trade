@@ -23,6 +23,6 @@
 
 <div class="rooms-f">
   <div class="user-name">
-    <a href="#">ユーザー名</a>
+    <%= link_to current_user.nickname, edit_user_path(current_user) %>
   </div>
 </div>

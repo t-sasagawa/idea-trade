@@ -10,15 +10,18 @@
 
 <div class="rooms">
   <div class="room">
-    <div class="room-name">
+    <ul class="room-name">
       <% if @rooms.exists? %>
       <% @rooms.each do |room| %>
-        <%= link_to new_room_path(room) do %> <%# pathがないのでチャット作ってから編集 %>
+      <li class="list">
+        <%= link_to new_room_path(room) do %>
+        <%# ↑pathがないのでチャット作ってから編集 %>
         <%= room.name %>
         <% end %>
+      </li>
       <% end %>
       <% end %>
-    </div>
+    </ul>
   </div>
 </div>
 

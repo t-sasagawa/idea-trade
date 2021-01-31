@@ -11,12 +11,13 @@
 <div class="rooms">
   <div class="room">
     <div class="room-name">
-      <a href="#">techroom1</a>
-    </div>
-  </div>
-  <div class="room">
-    <div class="room-name">
-      <a href="#">techroom2</a>
+      <% if @rooms.exists? %>
+      <% @rooms.each do |room| %>
+        <%= link_to new_room_path(room) do %> <%# pathがないのでチャット作ってから編集 %>
+        <%= room.name %>
+        <% end %>
+      <% end %>
+      <% end %>
     </div>
   </div>
 </div>

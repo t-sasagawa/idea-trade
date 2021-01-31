@@ -3,21 +3,25 @@
     <a href="#">Idea Trade</a>
   </div>
   <div class="create-room">
-    <a href="#">チャットを作成する</a>
+    <%= link_to "チャットを作成する", new_room_path %>
   </div>
 </div>
 
 
 <div class="rooms">
   <div class="room">
-    <div class="room-name">
-      <a href="#">techroom1</a>
-    </div>
-  </div>
-  <div class="room">
-    <div class="room-name">
-      <a href="#">techroom2</a>
-    </div>
+    <ul class="room-name">
+      <% if @rooms.exists? %>
+      <% @rooms.each do |room| %>
+      <li class="list">
+        <%= link_to new_room_path(room) do %>
+        <%# ↑pathがないのでチャット作ってから編集 %>
+        <%= room.name %>
+        <% end %>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>
 

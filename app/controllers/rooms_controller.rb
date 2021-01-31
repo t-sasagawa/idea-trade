@@ -1,4 +1,9 @@
 class RoomsController < ApplicationController
+
+  def index
+    @rooms = Room.all.includes(:user) #多分定義違う
+  end
+
   def new
     @room = Room.new
   end

@@ -73,7 +73,7 @@ ER図を御覧ください。
 ### Association
 
 - has_many :room_users
-- has_many :users, through: room_users
+- belongs_to :user
 - has_many :messages
 
 ## room_users テーブル
